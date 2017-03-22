@@ -1,16 +1,27 @@
 {
-  "name": "api",
+  "name": "ictlabapi",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ICT-lab-sys/api.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.1",
-    "moment": "^2.18.0",
-    "momentjs": "^2.0.0"
-  }
+  "bugs": {
+    "url": "https://github.com/ICT-lab-sys/api/issues"
+  },
+  "homepage": "https://github.com/ICT-lab-sys/api#readme"
 }
