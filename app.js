@@ -17,10 +17,10 @@ router.get('/', function (req, res) {
 
 })
     router.get('/temp', function (req, res) {
-        MongoClient.connect('mongodb://localhost:27017/testdatabase', function (err, db) {
+        MongoClient.connect('mongodb://localhost:27017/ictlab', function (err, db) {
             if (err) throw err
 
-            db.collection('usercollection').find().toArray(function (err, result) {
+            db.collection('temp').find().toArray(function (err, result) {
                 if (err) throw err
 
                 res.send(result)
