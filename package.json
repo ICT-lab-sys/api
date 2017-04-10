@@ -6,6 +6,8 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "moment": "^2.18.1",
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.1"
@@ -14,7 +16,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ICT-lab-sys/api.git"

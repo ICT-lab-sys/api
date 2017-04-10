@@ -9,7 +9,7 @@ var c
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
-var lastUpdatedData;
+
 var port = process.env.PORT || 3000;
 var router = express.Router();
 var timer = setInterval(checkIfDataUpdated, 5000);
@@ -27,8 +27,13 @@ router.get('/', function (req, res) {
 
                 if (JSON.stringify(c)==JSON.stringify(result)){
                     console.log("statement klopt")
-                    return next(res.status(403).send("error"))
+                     next(res.status(500).send(result))
+                    if(res.statusCode = 500){
+                        console.log("server down")
+                    }
+                    return;
                 }
+
                 data = result
                return res.send(result)
             })
