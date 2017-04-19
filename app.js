@@ -76,6 +76,7 @@ router.get('/temp', function (req, res, next) {
                 return;
             }
 
+
             if (JSON.stringify(c) != JSON.stringify(result) && res.statusCode == 200) {
                 countedInterval = 0;
                 console.log(countedInterval);
