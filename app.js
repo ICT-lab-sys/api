@@ -1,5 +1,13 @@
 var express = require('express')
 var app = express();
+var nodemailer = require("nodemailer");
+var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: 'sysictlab@gmail.com',
+        pass: 'SoukYousSwen'
+    }
+});
 var bodyParser = require('body-parser')
 var MongoClient = require('mongodb').MongoClient
 var moment = require('moment');
@@ -37,6 +45,14 @@ router.get('/temp', function (req, res, next) {
                     next(res.status(500).send(result))
                     if (res.statusCode = 500) {
                         console.log("Intermittent failure")
+
+                        transporter.sendMail({
+                            from: 'sysictlab@gmail.com',
+                            to: 'sysictlab@gmail.com',
+                            subject: 'Intermittent failure',
+                            html: '<b>Intermittent failure</b>',
+                            text: 'Intermittent failure'
+                        });
                     }
                     return;
                 }
@@ -44,13 +60,21 @@ router.get('/temp', function (req, res, next) {
                 if (countedInterval == 30) {
                     next(res.status(500).send(result));
                     if (res.statusCode = 500) {
-                        console.log("Server is down")
+                        console.log("Sensor is down")
+
+                        transporter.sendMail({
+                            from: 'sysictlab@gmail.com',
+                            to: 'sysictlab@gmail.com',
+                            subject: 'Sensor down',
+                            html: '<b>Sensor is down</b>',
+                            text: 'Sensor is down'
+                        });
                     }
                     return;
                 }
                 next(res.status(304).send(result));
                 return;
-             }
+            }
 
             if (JSON.stringify(c) != JSON.stringify(result) && res.statusCode == 200) {
                 countedInterval = 0;
@@ -73,4 +97,3 @@ app.listen(port, function () {
 function checkIfDataUpdated() {
     c = data
 }
-

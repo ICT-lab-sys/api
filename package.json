@@ -10,7 +10,8 @@
     "https": "^1.0.0",
     "moment": "^2.18.1",
     "mongodb": "^2.2.25",
-    "mongoose": "^4.9.1"
+    "mongoose": "^4.9.1",
+    "nodemailer": "^4.0.0"
   },
   "devDependencies": {},
   "scripts": {
