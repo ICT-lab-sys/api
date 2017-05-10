@@ -26,6 +26,9 @@ router.get('/', function (req, res) {
     res.send("Please go to localhost:3000/api/temp")
 
 })
+
+
+
 router.get('/temp', function (req, res, next) {
     MongoClient.connect('mongodb://localhost:27017/ictlab', function (err, db) {
         if (err) {
