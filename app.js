@@ -32,7 +32,7 @@ router.get('/', function (req, res) {
 router.get('/temp', function (req, res, next) {
     MongoClient.connect('mongodb://localhost:27017/ictlab', function (err, db) {
         if (err) {
-            return next(err);
+            return next(err); //ewa
         }
 
         db.collection('temp').find().toArray(function (err, result) {
