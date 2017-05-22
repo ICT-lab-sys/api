@@ -15,7 +15,8 @@
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.1",
     "nodemailer": "^4.0.0",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "supertest": "^3.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
