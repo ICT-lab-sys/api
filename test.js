@@ -3,7 +3,7 @@ var request = require('request');
 var assert = require('assert'),
     //kukarddd
     http = require('http');
-var expect = require('chai').expect,
+
     supertest = require('supertest'),
     api = supertest('http://localhost:3000/api/temp');
 
@@ -16,5 +16,6 @@ describe('Unit Test 1: Check if API is live', function () {
         });
     });
 });
+
 
 
